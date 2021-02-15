@@ -1,0 +1,69 @@
+<?php
+
+## sesssion start
+session_start();
+
+## database connection
+$hostdb = "localhost";
+$userdb = "root";
+$pwddb = "";
+$namedb = "users";
+
+$con = mysqli_connect($hostdb, $userdb, $pwddb, $namedb);
+
+if ($con -> connect_error) {
+	die("Failed to connect to the databse " . $con -> connection_error);
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head id="head"><link rel="stylesheet" type="text/css" href="cdn.css">
+		
+		<title>Teacher Login | myTeacher</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="author" content="MyTutor" />
+		<meta name="robots" content="index,follow" />
+		
+		<meta name="viewport" content="width=device-width,maximum-scale=2" /><meta name="description" content="Sign in here as a Tutor to access your account. Don't have an account yet? Create one here." /><meta property="og:description" content="Sign in here as a Tutor to access your account. Don't have an account yet? Create one here." /><meta property="og:url" content="" /><meta property="og:image" content=""/>
+	    <link rel="icon" type="image/png" sizes="180x180"href="header.png"/>
+		<link rel="icon" type="image/png" sizes="96x96" href="header.png"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="header.PNG"/>
+		<link rel="icon" type="image/png" sizes="16x16" href="header.PNG"/>
+		</head>
+		<body class="v3 modallike login large-medium page_tutors_login ">
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TCCQ42" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+		<div id="container" class=""><div id="allcontent" style="padding-top: 0px;" class="allcontent  ">
+		<main>
+			<header>
+				<a href="Login.html" class="left link__back"></a>
+				<div class="u-show--small"><img src="teacher.jpg" alt="Tutor" height="56" width="89" /></div>
+				<h1>Teacher log in</h1>
+				<p class="u-show--small">Give lessons or manage bookings with your students</p>
+				<a href="home.html" class="right link__close"></a>
+			</header><article id="login">
+					<section>
+						<div class="u-hide--small"><img src="teacher.jpg" alt="Tutor" height="143" width="165" />
+							<h2>I am a Teacher</h2>
+							<p>Give lessons or manage meeting with your student</p>
+						</div>
+						<form id="form" name="form" method="post" action="login_method.php" enctype="application/x-www-form-urlencoded">
+		<div id="form:email" class="inputRegion text  "><label id="form:email:label" for="form:email:input">Email address</label>
+			<div class="input"><input id="form:email:input" name="form:email:input" type="text" autocomplete="on" maxlength="255" placeholder="Type your email address" size="0">
+			</div><div id="form:email:localMessage" class="false"></div>
+		<br>
+			<div id="form:Password" class="inputRegion text  "><label id="form:Password:label" for="form:Password:input">Password</label>
+			<div class="input"><input id="form:Password:input" name="form:Password:input" type="text" autocomplete="on" maxlength="60" placeholder="Type your Password" size="0" >
+		</div><span id="form:focusEmail"></span>
+		<br>
+		<footer><button id="form:usePassword" name="form:usePassword" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only r_button r_button--m r_button--default r_button--full-width"><type="submit"><span class="ui-button-text ui-c">Log with password</span></button>
+		</footer><input type="hidden" name="form_SUBMIT" value="1" /><input type="hidden" autocomplete="off" name="javax.faces.ViewState"  autocomplete="off" /></form>
+</section></article>
+<footer>
+				<ul>
+			<li>Need help? Call us on 
+<a href="tel:+917908571201" title="Call +91 7908571201" class="phoneNumber "><span>+917908571201</span></a> or <a href="mailto:abhi731233@gmail.com">email us</a></li><li id="adultLearner">Help! I’m an <a href="https://wa.me/+917908571201">adult learner</a></li></ul>
+<aside><a href="signup.html" class="r_button r_button--default r_button--full-width--mobile">Sign up</a></aside>
+</footer>
+		</main>
+		</html> 

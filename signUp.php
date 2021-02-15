@@ -118,8 +118,8 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fas fa-graduation-cap"></i> </span>
 		</div>
-		<select class="form-control">
-			<option selected="" name="qualification"> Select Your Qualification</option>
+		<select class="form-control"  name="qualification">
+			<option selected=""> Select Your Qualification</option>
 			<option>Bachelor</option>
 			<option>Masters</option>
 			<option>Doctorate</option>
@@ -149,7 +149,7 @@
     <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
     </div> <!-- form-group// -->      
-    <p class="text-center">Have an account? <a href="teacherLogin.html">Log In</a></p>                                                                 
+    <p class="text-center">Have an account? <a href="teacherLogin.php">Log In</a></p>                                                                 
 </form>
 </article>
 </div> <!-- card.// -->
