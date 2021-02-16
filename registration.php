@@ -26,23 +26,17 @@
     $address = $_POST["address"];
     $pwd = $_POST["password"];
 
-    // ## checking if the email and phone number is already taken
-    // $s = "SELECT * FROM users WHERE email = '$email' OR SELECT * FROM users WHERE phone_number = '$phone_number'";
-    // // $p = "SELECT * FROM users WHERE phone_number = '$phone_number'";
+    ## checking if the email and phone number is already taken
+    $s = "SELECT * FROM 'users' WHERE email = '$email'";
+    // $p = "SELECT * FROM users WHERE phone_number = '$phone_number'";
 
-    // $result = mysqli_query($con, $s);
-    // $num = mysqli_num_rows($result);
+    $result = mysqli_query($con, "SELECT email FROM users WHERE email = '$email'");
 
-    // if ($num == 1) {
-    //     die("this email or phone number already registered, please try with a different one.")
-    // else{
-    //     $reg = "INSERT INTO users(fullname, email, phone_number, stream, subject, tution_mode, qualification, address, pwd) VALUES('$fullname', '$email', '$phone_number', '$stream', '$subject', '$tution_mode', '$qualification', '$address', '$pwd')";
-    //     mysqli_query($con, $reg);
-    //     echo"Registration done!";
-    // }
-
-    $reg = "INSERT INTO users(fullname, email, phone_number, stream, subject, tution_mode, qualification, address, pwd) VALUES('$fullname', '$email', '$phone_number', '$stream', '$subject', '$tution_mode', '$qualification', '$address', '$pwd')";
+    if (mysqli_num_rows($result)>0) {
+        echo'<h2 style="color:red">this email or phone number already registered, please try with a different one.</h2>';
+    } else{
+        $reg = "INSERT INTO users(fullname, email, phone_number, stream, subject, tution_mode, qualification, address, pwd) VALUES('$fullname', '$email', '$phone_number', '$stream', '$subject', '$tution_mode', '$qualification', '$address', '$pwd')";
         mysqli_query($con, $reg);
         echo"Registration done!";
-
+    }
 ?>
